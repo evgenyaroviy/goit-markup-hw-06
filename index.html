@@ -21,6 +21,7 @@
     />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
+
   <body>
     <!-- Head -->
 
@@ -75,6 +76,67 @@
           </button>
 
           <!-- //можливо буде кнопка -->
+        </div>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button
+              type="button"
+              class="button-modal"
+              data-modal-close
+            ></button>
+            <h2 class="modal-name">
+              Leave your contacts and we will call you back
+            </h2>
+            <form class="modal-reg">
+              <div class="form-group" role="group">
+                <label for="name" class="user-info">
+                  <span class="info-name">Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="username"
+                  id="name"
+                  class="info-style"
+                />
+
+                <label for="tel" class="user-info">
+                  <span class="info-name">Phone</span>
+                </label>
+                <input type="tel" name="telefone" id="tel" class="info-style" />
+
+                <label for="mail" class="user-info">
+                  <span class="info-name">Email</span>
+                </label>
+                <input type="email" name="mail" id="mail" class="info-style" />
+              </div>
+
+              <div class="form-group" role="group">
+                <label for="feedback">
+                  <span class="info-name">Comment</span>
+                </label>
+                <textarea
+                  name="feedback"
+                  rows="5"
+                  id="feedback"
+                  placeholder="Text input"
+                  class="feedback-info"
+                >
+                </textarea>
+              </div>
+
+              <div class="form-group" role="group">
+                <label class="policy">
+                  <input type="checkbox" name="hobby" value="" />
+                  <span class="policy-text"
+                    >I accept the terms and conditions of the
+                    <a href="/" class="polici-link">Privacy Policy</a>
+                  </span>
+                </label>
+              </div>
+            </form>
+
+            <button type="submit" class="button-info">Send</button>
+          </div>
         </div>
       </section>
 
@@ -165,12 +227,6 @@
           </ul>
         </div>
       </section>
-
-      <div class="backdrop is-hidden" data-modal>
-        <div class="modal">
-          <button type="button" class="button-modal" data-modal-close></button>
-        </div>
-      </div>
 
       <!-- Our Team -->
 
@@ -451,6 +507,15 @@
               ></a>
             </li>
           </ul>
+        </div>
+
+        <div class="subscribe">
+          <h2 class="footer-social-name">Subscribe</h2>
+          <label type="email" name="email" class="footer-subscribe">
+            <input type="email" class="footer-mail" placeholder="E-mail" />
+          </label>
+
+          <button type="submit" class="button-subscribe">Subscribe</button>
         </div>
       </div>
     </footer>
