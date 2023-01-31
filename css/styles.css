@@ -14,6 +14,7 @@ button color #4D5AE5
   --team-color: #2e2f42;
   --color-footer: #e7e9fc;
   --logo-footer: #f4f4fd;
+  --modal-color: #fcfcfc;
   --padding-nav: 24px 0;
   --hover-time: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -362,7 +363,7 @@ img {
 
   width: 408px;
   height: 576px;
-  background: #fcfcfc;
+  background: var(--modal-color);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -400,20 +401,28 @@ img {
   background-color: #404bbf;
 }
 
-.modal-reg {
+.form {
   display: flex;
   justify-content: center;
   flex-direction: column;
 
   margin: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 12px;
+  padding-right: 36px;
 }
 
-.form-group {
+.form-group,
+.feedback-group {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+
+  margin-bottom: 8px;
+}
+
+.user-info {
+  margin-bottom: 4px;
 }
 
 .modal-name {
@@ -424,7 +433,7 @@ img {
   letter-spacing: 0.02em;
   color: var(--team-color);
   margin-top: 76px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .info-style {
@@ -432,8 +441,31 @@ img {
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  margin-bottom: 8px;
-  background: #fcfcfc;
+  background: var(--modal-color);
+  padding-left: 38px;
+
+  transition: border-color var(--hover-time);
+}
+
+.info-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: var(--main-color-h);
+
+  transition: fill var(--hover-time);
+}
+
+.info-style:focus,
+.feedback-info:focus,
+.footer-mail:focus {
+  border: 1px solid var(--button-bg);
+  outline: transparent;
+}
+
+.info-style:focus ~ .info-icon {
+  fill: var(--button-bg);
 }
 
 .info-name {
@@ -441,18 +473,27 @@ img {
   line-height: calc(16 / 12);
   letter-spacing: 0.04em;
   color: #8e8f99;
+}
+
+.feedback {
   margin-bottom: 4px;
+}
+
+.feedback-group {
+  margin-bottom: 16px;
 }
 
 .feedback-info {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  margin-bottom: 8px;
-  background: #fcfcfc;
+  background: var(--modal-color);
 
   padding-top: 8px;
   padding-left: 16px;
-  margin-bottom: 16px;
+
+  resize: none;
+
+  transition: border-color var(--hover-time);
 }
 
 .feedback-info::placeholder {
@@ -465,8 +506,35 @@ img {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.policy {
+.policy-group {
   margin-bottom: 24px;
+}
+
+.policy {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.checkbox {
+  appearance: none;
+  position: absolute;
+}
+
+.checkbox-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid #2e2f42;
+  border-radius: 2px;
+  background-color: var(--modal-color);
+  transition: border-color var(--hover-time), background-color var(--hover-time);
+}
+
+.checkbox:checked + .checkbox-icon {
+  background-color: var(--button-hover);
+  border-color: var(--button-hover);
 }
 
 .policy-text {
@@ -479,7 +547,7 @@ img {
   color: #757575;
 }
 
-.polici-link {
+.policy-link {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -489,9 +557,11 @@ img {
 }
 
 .button-info {
+  width: 169px;
   background: var(--button-bg);
   border-radius: 4px;
   border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   font-weight: 500;
   font-size: 16px;
@@ -576,7 +646,7 @@ img {
 }
 
 a:focus {
-  outline: none;
+  outline: transparent;
 }
 
 .social-link:is(:hover, :focus) {
@@ -719,9 +789,6 @@ a:focus {
   background: #31d0aa;
 }
 
-.subscribe {
-}
-
 .footer-subscribe {
   display: inline-block;
   width: 264px;
@@ -734,10 +801,11 @@ a:focus {
   background: var(--main-color-h);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
+  color: var(--main-color);
   padding-left: 16px;
   margin: 0;
-}
-.footer-mail::placeholder {
+
+  transition: border-color var(--hover-time);
 }
 
 .button-subscribe {
@@ -760,6 +828,16 @@ a:focus {
 .button-subscribe:hover,
 .button-subscribe:focus {
   background-color: #404bbf;
+}
+
+.button-subscribe {
+  position: relative;
+}
+
+.sudscribe-icon {
+  position: absolute;
+  right: 24px;
+  fill: var(--main-color);
 }
 
 /* portfolio */
