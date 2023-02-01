@@ -362,11 +362,13 @@ img {
   transform: translate(-50%, -50%);
 
   width: 408px;
-  height: 576px;
+  min-height: 576px;
   background: var(--modal-color);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  padding: 72px 24px 24px 24px;
 }
 
 .button-modal {
@@ -402,13 +404,13 @@ img {
 }
 
 .form {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   flex-direction: column;
 
   margin: auto;
   padding-left: 12px;
-  padding-right: 36px;
+  padding-right: 36px; */
 }
 
 .form-group,
@@ -422,6 +424,7 @@ img {
 }
 
 .user-info {
+  display: block;
   margin-bottom: 4px;
 }
 
@@ -432,7 +435,7 @@ img {
   text-align: center;
   letter-spacing: 0.02em;
   color: var(--team-color);
-  margin-top: 76px;
+
   margin-bottom: 10px;
 }
 
@@ -484,6 +487,8 @@ img {
 }
 
 .feedback-info {
+  width: 360px;
+  height: 120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   background: var(--modal-color);
@@ -572,6 +577,7 @@ img {
   padding: 16px 32px;
   display: block;
   margin: 0 auto;
+  cursor: pointer;
 
   transition: background var(--hover-time), color var(--hover-time);
 }
@@ -821,6 +827,7 @@ a:focus {
   color: var(--main-color);
   padding: 8px 64px 8px 24px;
   margin-left: 24px;
+  cursor: pointer;
 
   transition: background var(--hover-time), color var(--hover-time);
 }
